@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Compilers Project</title>
+        <meta charset = "UTF-8">
+           <meta name = "description" content = "Compilers Project: Which Blocks and visited?!">
+           <style>
+            .green {
+                background-color: #90ee90;
+            }
+            .red {
+                background-color: #ffa09e;
+            }
+        </style>
+           <script></script>
+    </head>
+    <body>
+        <pre>
+<div class = "green">import java.util.List;
+public class Output {<div class = "green">	public static void main (String[] args) {
+		int x = 5, y = 6;
+		for(int i = 0; i < 5;i++){
+<div class = "green">			System.out.println("For Loop");
+			while(x < y){
+<div class = "green">				x++;
+				System.out.println("while loop");
+				do {
+<div class = "green">					System.out.println("do while loop");
+				} while(x == 0);</div>			}</div>		}</div>		x = 5;
+		y = 6;
+		if(x < y){
+<div class = "green">			System.out.println("if statement");
+		}</div><div class = "red">		else {
+			System.out.println("else statement");
+		}</div>		if(x == 5){
+<div class = "green">			if(x > 5){
+<div class = "red">				System.out.println("x>5");
+			}</div><div class = "green">			else {
+				System.out.println("x<5");
+			}</div>		}</div>		x = 6;
+		y = 5;
+		if(x > y){
+<div class = "green">			if(y > 4){
+<div class = "green">				if(x == 6){
+<div class = "green">					if(x == 4){
+<div class = "red">						System.out.println("x == 4");
+					}</div>				}</div>			}</div><div class = "red">			else {
+				System.out.println("y > x");
+			}</div>		}</div>		foo();
+	}</div><div class = "green">	static void foo () {
+		int x = 1;
+		switch(x){
+<div class = "red"><div class = "red">			case 0: 
+				System.out.println("case 0");
+			break;
+</div><div class = "green">			case 1: 
+				System.out.println("case 1");
+				if(x == 1){
+<div class = "green">					System.out.println("if in case 1");
+				}</div>			break;
+</div><div class = "red">			default: 
+				System.out.println("default");
+			break;
+</div>		}</div>		System.out.println("method");
+	}</div>}            </div>
+        </pre>
+    </body>
+</html>

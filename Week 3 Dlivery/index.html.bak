@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+   <html>
+    <head>
+        <title>Compilers Project</title>
+        <meta charset = "UTF-8">
+           <meta name = "description" content = "Compilers Project: Which Blocks and visited?!">
+           <style>
+            .green {
+                background-color: #90ee90;
+            }
+            .red {
+                background-color: #ffa09e;
+            }
+        </style>
+           <script></script>
+    </head>
+    <body>
+        <pre>
+class Output{
+}
+class Output{
+}
