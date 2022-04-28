@@ -34,12 +34,12 @@
   * Full documentation using doxygen for the classes and functions developed only. 
   * Make sure that the pipeline does not include any manual effort. 
   * Show at least 3 Java examples that shows difficult scenarios. 
-    * As an example for a Java input file, we used this: [Input.java]()
+    * As an example for a Java input file, we used this: [Input.java]()  
       ![input](https://user-images.githubusercontent.com/48108210/165795142-cdb27143-d880-4e45-98eb-9cbc416377d0.PNG)
     * Then all the required files are generated automatically with a simple run of "CodeGenerator" driver code (in the main method)
-    * The generated Output.java file: 
+    * The generated Output.java file:  
       [Output.java]()
-    * The generated text file of the indices of the visited blocks: [visited_blocks.txt]()
+    * The generated text file of the indices of the visited blocks: [visited_blocks.txt]()  
       ![visited_blocks](https://user-images.githubusercontent.com/48108210/165795149-d84be279-e665-4843-b1d8-797a339929c5.PNG)
-    * The generated HTML file: [index.html]()
+    * The generated HTML file: [index.html]()  
       ![html](https://user-images.githubusercontent.com/48108210/165795133-e918f431-df9a-4e13-b4b4-8531040d7aeb.PNG)
