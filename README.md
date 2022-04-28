@@ -35,11 +35,11 @@
   * Make sure that the pipeline does not include any manual effort. 
   * Show at least 3 Java examples that shows difficult scenarios. 
     * As an example for a Java input file, we used this: [Input.java]()  
-      ![input](https://user-images.githubusercontent.com/48108210/165795142-cdb27143-d880-4e45-98eb-9cbc416377d0.PNG)
+      ![input](https://user-images.githubusercontent.com/48108210/165796607-b21b785c-9608-4c93-af70-21dd5dcc3797.PNG)
     * Then all the required files are generated automatically with a simple run of "CodeGenerator" driver code (in the main method)
     * The generated Output.java file:  
       [Output.java]()
     * The generated text file of the indices of the visited blocks: [visited_blocks.txt]()  
       ![visited_blocks](https://user-images.githubusercontent.com/48108210/165795149-d84be279-e665-4843-b1d8-797a339929c5.PNG)
     * The generated HTML file: [index.html]()  
-      ![html](https://user-images.githubusercontent.com/48108210/165795133-e918f431-df9a-4e13-b4b4-8531040d7aeb.PNG)
+      ![html](https://user-images.githubusercontent.com/48108210/165796634-8d5c512c-d09d-4402-a0e7-281e84663704.PNG)
