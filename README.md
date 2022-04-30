@@ -1,4 +1,4 @@
-# compilers_project
+# Compilers project
 
 ## Members:
   1. Mostafa Mahmoud Mostafa
