@@ -112,6 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa4029f76efb3603cd9552f3e9a6e3691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb23a0040f3b805a8c41025c7f401e50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_listener_parser.html#adb23a0040f3b805a8c41025c7f401e50">enterStatement</a> (JavaParser.StatementContext ctx)</td></tr>
 <tr class="separator:adb23a0040f3b805a8c41025c7f401e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2368d2ca19e0503a55f2d66f3b3b3116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_listener_parser.html#a2368d2ca19e0503a55f2d66f3b3b3116">enterSwitchBlockStatementGroup</a> (JavaParser.SwitchBlockStatementGroupContext ctx)</td></tr>
+<tr class="separator:a2368d2ca19e0503a55f2d66f3b3b3116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d4eafe9f58a1f3f257d08ca06c4ff90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_listener_parser.html#a2d4eafe9f58a1f3f257d08ca06c4ff90">exitStatement</a> (JavaParser.StatementContext ctx)</td></tr>
 <tr class="separator:a2d4eafe9f58a1f3f257d08ca06c4ff90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b578a8a59e07734c592263cc69f1656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_my_listener_parser.html#a0b578a8a59e07734c592263cc69f1656">enterIfbranch</a> (JavaParser.IfbranchContext ctx)</td></tr>
@@ -1163,9 +1165,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >The Consturtor of the class taskes</p><dl class="params"><dt>Parameters</dt><dd>
+<p >fn <a class="el" href="class_my_listener_parser.html#adb41f8d92fe7b8fa9a4635ff388d13ec">MyListenerParser(JavaParser parser)</a> The Consturtor of the class</p>
+<p >This initializes the parser while making a <a class="el" href="class_java_parser.html">JavaParser</a> instance </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">JavaParse</td><td></td></tr>
+    <tr><td class="paramname">parser</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1188,14 +1191,13 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#blockStatement</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "blockStatement" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>BlockStatementContext. The function uses it to get the text of its children: localVariableDeclaration, localTypeDeclaration </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#af62665e5304491ad226c0999b10efc3e">JavaParserBaseListener</a>.</p>
 
@@ -1216,14 +1218,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#classBodyDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "classBodyDeclaration" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ClassBodyDeclarationContext. The function uses it to get the text of its children: STATIC, modifier </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a9f253e53476ff2264dac739cfed0e97f">JavaParserBaseListener</a>.</p>
 
@@ -1244,14 +1245,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#classDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "classDeclaration" parser rule</p>
+<p >It also adds the function, that is used to generate the text file of the visited blocks, before starting the main program </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ClassDeclarationContext. The function uses it to get the text of its children: typeParameters, typeType, typeList </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a517c48e2a9111d9ea7e64c0b1eb8ff3b">JavaParserBaseListener</a>.</p>
 
@@ -1272,14 +1272,14 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#compilationUnit</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >It's the first function to be called when the parser begins to parse rules</p>
+<p >Used to handle "compilationUnit" parser rule</p>
+<p >It also adds some imports, which are later used, to the generated file </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>CompilationUnitContext. The function uses it to get the text of it's children: packageDeclaration, importDeclaration </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#abcd132a8bd4d183ba5439f56c9bbde4f">JavaParserBaseListener</a>.</p>
 
@@ -1300,14 +1300,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#elseif</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "esleif" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ElseifContext. The function uses it to get the text of its children: ELSE </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#abc16b895419d5ed307a6d878859fd62f">JavaParserBaseListener</a>.</p>
 
@@ -1328,14 +1327,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#ifbranch</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "ifbranch" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>IfbranchContext. The function uses it to get the text of its children: IF, "parExpression" </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a0a7d0b17658434e1cb331d6b4c3867a8">JavaParserBaseListener</a>.</p>
 
@@ -1356,14 +1354,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#methodDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "methodDeclaration" parser rule</p>
+<p >It also appends some useful code for recognizing the visited and non-visited blocks </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>MethodDeclarationContext. The function uses it to get the text of its children: typeTypeOrVoid, identifier, formalParameters, THROWS, qualifiedNameList </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#af88572e89a771ca9919abc20a4bc95c1">JavaParserBaseListener</a>.</p>
 
@@ -1384,16 +1381,42 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#statement</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "statement" parser rule</p>
+<p >It adds some html code; defines the class of the "div" to be green (visited block) or red (non-visited block) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>StatementContext. The function uses it to get the text of its children: FOR, WHILE, DO, SWITCH, BREAK, "expression" </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a87316e3d54a58746e39428f2fd046b43">JavaParserBaseListener</a>.</p>
+
+</div>
+</div>
+<a id="a2368d2ca19e0503a55f2d66f3b3b3116" name="a2368d2ca19e0503a55f2d66f3b3b3116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2368d2ca19e0503a55f2d66f3b3b3116">&#9670;&nbsp;</a></span>enterSwitchBlockStatementGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MyListenerParser.enterSwitchBlockStatementGroup </td>
+          <td>(</td>
+          <td class="paramtype">JavaParser.SwitchBlockStatementGroupContext&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Used to handle the "switchBlockStatementGroup" parser rule</p>
+<p >It appends some useful code for generating the text file of the visited blocks </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>SwitchBlockStatementGroupContext. The function uses it to get the text of its children: switchLabel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a64df08e716ef871f7b5993c7b2af3c3b">JavaParserBaseListener</a>.</p>
 
 </div>
 </div>
@@ -1412,14 +1435,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enter a parse tree produced by <code><a class="el" href="">JavaParser#typeDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle the "typeDeclaration" parser rule</p>
+<p >It appends it to both strings; code, html that are going to be written </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>TypeDeclarationContext. The function uses it to get the text of its children: classOrInterfaceModifier </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#aa1d6a2f588638817eff3c111012ee586">JavaParserBaseListener</a>.</p>
 
@@ -1440,14 +1462,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#classBodyDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "classBodyDeclaration" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ClassBodyDeclarationContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a31ddcb8e05df479dcff73bdaab8e1edc">JavaParserBaseListener</a>.</p>
 
@@ -1468,14 +1489,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#classDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "classDeclaration" parser rule</p>
+<p >It also appends some html tags for the html string to be written to index.html </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ClassDeclarationContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#ac5cd929307041e29af3728e5bcdf720f">JavaParserBaseListener</a>.</p>
 
@@ -1496,14 +1516,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#compilationUnit</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to finally write the total string, which contains all the code to be written</p>
+<p >It also resets the blockNum to zero (for html string) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>CompilationUnitContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#ac466f37395b3386e3a063431f11115c0">JavaParserBaseListener</a>.</p>
 
@@ -1524,14 +1543,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#elseif</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "elseif" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>ElseifContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#aa75919ceee6d6c513c2b94d0b9fe554f">JavaParserBaseListener</a>.</p>
 
@@ -1552,14 +1570,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#ifbranch</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "ifbranch" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>IfbranchContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a6b3cc9879961611bc16840f7a7c67b81">JavaParserBaseListener</a>.</p>
 
@@ -1580,14 +1597,14 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#methodDeclaration</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "methodDeclaration" parser rule</p>
+<p >It also adds some useful code for appending the index of visited blocks to the set "set" which we defined earlier (watch enterClassDeclaration)</p>
+<p >Also, there is a string called "visited" defined to be written to the text file, it's being appended here </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>MethodDeclarationContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a44ece2be70e322de946865142d20c819">JavaParserBaseListener</a>.</p>
 
@@ -1608,14 +1625,13 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Exit a parse tree produced by <code><a class="el" href="">JavaParser#statement</a></code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p >Used to handle what to do before exiting the "statement" parser rule</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>the parse tree</td></tr>
+    <tr><td class="paramname">ctx</td><td>StatementContext. </td></tr>
   </table>
   </dd>
 </dl>
-The default implementation does nothing.</p>
-<p >The default implementation does nothing.</p>
 
 <p>Reimplemented from <a class="el" href="class_java_parser_base_listener.html#a4529a1c054b9dab87f8e69a7e120967e">JavaParserBaseListener</a>.</p>
 
@@ -1635,7 +1651,7 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Used to read the numbers of visited blocks from visited_blocks file </p>
+<p >Used to read the numbers of visited blocks from visited_blocks.txt file </p>
 
 </div>
 </div>
@@ -1654,7 +1670,12 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Used to write the generated java code to Output.java file </p>
+<p >Used to write the generated java code to Output.java file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>writes it to the output file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1673,7 +1694,12 @@ The default implementation does nothing.</p>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Used to write HTML code to index.html file </p>
+<p >Used to write HTML code to index.html file </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>writes it to the output file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

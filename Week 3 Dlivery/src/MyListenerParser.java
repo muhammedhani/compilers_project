@@ -856,28 +856,56 @@ public class MyListenerParser extends JavaParserBaseListener {
     @Override
     public void enterIfbranch(JavaParser.IfbranchContext ctx) {
         TokenStream tokens = parser.getTokenStream();
-        for(int i = 0;i < counter;i++) {
-            System.out.print('\t');
-            code += "\t";
-            if(ishtml)html += "\t";
+//        System.out.println(ctx.getParent().getParent().getChild(0).getText());
+        if(ctx.getParent().getParent().getChild(0).getText().equals("else")){
+            System.out.print(ctx.IF());
+            if(!ishtml) {
+                code += ctx.IF();
+            } else {
+                html += ctx.IF();
+            }
+            System.out.println(tokens.getText(ctx.parExpression())+"{");
+            if(!ishtml) {
+                code += tokens.getText(ctx.parExpression())+"{\n";
+            } else {
+                html += tokens.getText(ctx.parExpression()) + "{";
+            }
+            for(int i = 0;i < counter;i++) {
+                System.out.print('\t');
+                code += "\t";
+                if(ishtml)html += "\t";
+            }
+            System.out.println("int block"+blockNum+" = 0;");
+            code += "int block"+blockNum+" = 0;\n";
+            for(int i = 0;i < counter;i++) {
+                System.out.print("\t");
+                code += "\t";
+            }
         }
-        System.out.println("int block"+blockNum+" = 0;");
-        code += "int block"+blockNum+" = 0;\n";
-        for(int i = 0;i < counter;i++) {
-            System.out.print("\t");
-            code += "\t";
-        }
-        System.out.print(ctx.IF());
-        if(!ishtml) {
-            code += ctx.IF();
-        } else {
-            html += ctx.IF();
-        }
-        System.out.println(tokens.getText(ctx.parExpression())+"{");
-        if(!ishtml) {
-            code += tokens.getText(ctx.parExpression())+"{\n";
-        } else {
-            html += tokens.getText(ctx.parExpression())+"{\n";
+        else {
+            for(int i = 0;i < counter;i++) {
+                System.out.print('\t');
+                code += "\t";
+                if(ishtml)html += "\t";
+            }
+            System.out.println("int block"+blockNum+" = 0;");
+            code += "int block"+blockNum+" = 0;\n";
+            for(int i = 0;i < counter;i++) {
+                System.out.print("\t");
+                code += "\t";
+            }
+            System.out.print(ctx.IF());
+            if(!ishtml) {
+                code += ctx.IF();
+            } else {
+                html += ctx.IF();
+            }
+            System.out.println(tokens.getText(ctx.parExpression())+"{");
+            if(!ishtml) {
+                code += tokens.getText(ctx.parExpression())+"{\n";
+            } else {
+                html += tokens.getText(ctx.parExpression())+"{\n";
+            }
         }
         if(ishtml) {
             if(index < ints.size() && ints.get(index) == blockNum){
@@ -934,6 +962,21 @@ public class MyListenerParser extends JavaParserBaseListener {
     @Override
     public void enterElseif(JavaParser.ElseifContext ctx) {
         TokenStream tokens = parser.getTokenStream();
+//        if(ctx.getChild(1) != null)System.out.println(ctx.getChild(1).getChild(0).getChild(0).getText());
+        if(ctx.getChild(1) != null && ctx.getChild(1).getChild(0).getChild(0).getText().equals("if")){
+            for(int i = 0;i < counter;i++) {
+                System.out.print("\t");
+                code += "\t";
+                if(ishtml)html += "\t";
+            }
+            System.out.print(ctx.ELSE()+" ");
+            if(!ishtml) {
+                code += ctx.ELSE()+" ";
+            } else {
+                html += ctx.ELSE()+" ";
+            }
+            return ;
+        }
         if(ishtml) {
             if(index < ints.size() && ints.get(index) == blockNum){
                 html += "<div class = \"green\">";
@@ -985,6 +1028,7 @@ public class MyListenerParser extends JavaParserBaseListener {
      ******************************************************************************/
     @Override
     public void exitElseif(JavaParser.ElseifContext ctx) {
+        if(ctx.getChild(1) != null && ctx.getChild(1).getChild(0).getChild(0).getText().equals("if"))return;
         counter--;
         for(int i = 0;i < counter;i++) {
             System.out.print("\t");

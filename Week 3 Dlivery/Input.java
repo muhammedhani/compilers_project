@@ -39,7 +39,7 @@ public class Output {
         foo();
     }
     static void foo(){
-        int x = 1;
+        int x = -1;
         switch (x){
             case 0:
                 System.out.println("case 0");
@@ -48,6 +48,15 @@ public class Output {
                 System.out.println("case 1");
                 if(x == 1){
                     System.out.println("if in case 1");
+                }
+                else if(x == 2){
+                    System.out.println("else if");
+                }
+                else if(x == 3){
+                    System.out.println("another else if");
+                }
+                else {
+                    System.out.println("Else");
                 }
                 break;
             default:

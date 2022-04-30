@@ -109,7 +109,7 @@ public class Output {
 		int block16 = 0;
 			block16 = 16;
 			set.add(block16);
-		int x = 1;
+		int x = -1;
 		switch(x){
 			case 0: 
 			int block17 = 0;
@@ -128,11 +128,29 @@ public class Output {
 					set.add(block19);
 					System.out.println("if in case 1");
 				}
+				else if(x == 2){
+				int block20 = 0;
+									block20 = 20;
+					set.add(block20);
+					System.out.println("else if");
+				}
+				else if(x == 3){
+				int block21 = 0;
+									block21 = 21;
+					set.add(block21);
+					System.out.println("another else if");
+				}
+				else {
+					int block22 = 0;
+					block22 = 22;
+					set.add(block22);
+					System.out.println("Else");
+				}
 			break;
 			default: 
-			int block20 = 0;
-			block20 = 20;
-			set.add(block20);
+			int block23 = 0;
+			block23 = 23;
+			set.add(block23);
 				System.out.println("default");
 			break;
 		}

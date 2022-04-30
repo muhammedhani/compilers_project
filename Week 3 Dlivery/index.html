@@ -48,17 +48,21 @@ public class Output {<div class = "green">	public static void main (String[] arg
 				System.out.println("y > x");
 			}</div>		}</div>		foo();
 	}</div><div class = "green">	static void foo () {
-		int x = 1;
+		int x = -1;
 		switch(x){
 <div class = "red"><div class = "red">			case 0: 
 				System.out.println("case 0");
 			break;
-</div><div class = "green">			case 1: 
+</div><div class = "red">			case 1: 
 				System.out.println("case 1");
 				if(x == 1){
-<div class = "green">					System.out.println("if in case 1");
+<div class = "red">					System.out.println("if in case 1");
+				}</div>				else if(x == 2){				<div class = "red">					System.out.println("else if");
+				}</div>				else if(x == 3){				<div class = "red">					System.out.println("another else if");
+				}</div><div class = "red">				else {
+					System.out.println("Else");
 				}</div>			break;
-</div><div class = "red">			default: 
+</div><div class = "green">			default: 
 				System.out.println("default");
 			break;
 </div>		}</div>		System.out.println("method");
